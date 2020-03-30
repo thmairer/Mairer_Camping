@@ -6,24 +6,24 @@ using System.Web.Mvc;
 
 namespace Mairer_Camping.Controllers
 {
-    public class HomeController : Controller
+    public class CampingplatzController : Controller
     {
+        // GET: Campingplatz
         public ActionResult Index()
         {
             return View();
         }
-
-        public ActionResult About()
+        public ActionResult Infos()
         {
             return View();
         }
-
-        public ActionResult Impressum()
+        public ActionResult Preise()
         {
             return View();
         }
-
-
-
+        public ActionResult Bilder()
+        {
+            return View();
+        }
     }
 }
