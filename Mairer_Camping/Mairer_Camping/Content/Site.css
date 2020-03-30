@@ -1,11 +1,11 @@
 ﻿#container {
     min-width: 800px;
-    width: 80%;
+    width: 100%;
     margin: 0px auto;
 }
 
 header {
-    height: 180px;
+    
 }
 
 nav {
@@ -33,15 +33,22 @@ footer {
 }
 
 .nav_level1 {
-    font-size: 1.1em;
+    font-size: 1.2em;
+    font-weight:bold;
 }
 
 .nav_level2 {
-    font-size: 0.9em;
+    font-size: 1em;
     padding-left: 10px;
 }
 
-nav:hover {
-    text-decoration: none;
-    font-weight: bold;
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgheader {
+    width 100%;
 }
