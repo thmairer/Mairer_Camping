@@ -1,0 +1,47 @@
+﻿#container {
+    min-width: 800px;
+    width: 80%;
+    margin: 0px auto;
+}
+
+header {
+    height: 180px;
+}
+
+nav {
+    min-width: 140px;
+    width: 20%;
+    float: left;
+    min-height: 500px;
+    padding: 20px 5px 10px 10px;
+}
+
+content {
+    min-width: 500px;
+    width: 80%;
+    float: right;
+    min-height: 500px;
+    border-left: 1px solid #000000;
+    padding: 10px;
+}
+
+footer {
+    clear: both;
+    border-top: 1px solid #000000;
+    text-align: right;
+    padding: 5px 10px;
+}
+
+.nav_level1 {
+    font-size: 1.1em;
+}
+
+.nav_level2 {
+    font-size: 0.9em;
+    padding-left: 10px;
+}
+
+nav:hover {
+    text-decoration: none;
+    font-weight: bold;
+}
