@@ -1,7 +1,54 @@
-﻿
+﻿@model Mairer_Camping.Models.Reservierung
+
 @{
     ViewBag.Title = "Anfrage";
 }
 
 <h2>Anfrage</h2>
 
+@using (Html.BeginForm("Anfrage", "reservierung", FormMethod.Post))
+{
+
+
+    <table>
+        <tbody>
+            <tr>
+                <td>@Html.LabelFor(r => r.Firstname, "Vorname: ")</td>
+                <td>@Html.TextBoxFor(r => r.Firstname)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(r => r.Lastname, "Nachname: *")</td>
+                <td>
+                    @Html.TextBoxFor(r => r.Lastname, new { required = "required" })<br />
+                    <span class="errorform">@Html.ValidationMessageFor(r => r.Lastname)</span>
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(r => r.ArrivalDate, "Ankunftsdatum: *")</td>
+                <td>@Html.TextBoxFor(r => r.ArrivalDate, new { Type = "date", required = "required" })</td>
+                <span class="errorform">@Html.ValidationMessageFor(r => r.ArrivalDate)</span>
+
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(r => r.DepartureDate, "Abfahrtsdatum: *")</td>
+                <td>@Html.TextBoxFor(r => r.DepartureDate, new { Type = "date", required = "required" })</td>
+                <span class="errorform">@Html.ValidationMessageFor(r => r.DepartureDate)</span>
+
+            </tr>
+
+            <tr>
+                <td colspan="2" style="text-align:center">
+                    <input type="submit" value="absenden" id="btnSubmit" />
+                    <input type="reset" value="abbrechen" id="btnReset" />
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">* sind Pflichtfelder</td>
+            </tr>
+        </tfoot>
+
+
+    </table>
+}
