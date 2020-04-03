@@ -4,17 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mairer_Camping.Models.DB
+namespace Mairer_Camping.Models.DB.db_script
 {
-    public class i_repository_reservierung
+    interface i_repository_reservierung
     {
-        interface i_repository_user
-        {
+        void Open();
+        void Close();
 
-            void Open();
-            void Close();
+        bool Insert(Reservierung reservierung);
 
-            bool Insert(Reservierung reservierung);
-        }
     }
 }

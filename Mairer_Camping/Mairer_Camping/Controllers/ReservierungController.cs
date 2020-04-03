@@ -1,5 +1,6 @@
 ﻿using Mairer_Camping.Models;
 using Mairer_Camping.Models.DB;
+using Mairer_Camping.Models.DB.db_script;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace Mairer_Camping.Controllers
         }
         public ActionResult Anfrage()
         {
-            return View();
+            return View(new Reservierung());
         }
         [HttpPost]
         public ActionResult Anfrage(Reservierung reservierung)

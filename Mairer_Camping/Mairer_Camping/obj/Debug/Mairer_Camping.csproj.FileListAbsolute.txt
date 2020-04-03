@@ -172,3 +172,14 @@ C:\Users\tmair\Desktop\Mairer_Camping\Mairer_Camping\Mairer_Camping\Mairer_Campi
 C:\Users\tmair\Desktop\Mairer_Camping\Mairer_Camping\Mairer_Camping\Mairer_Camping\obj\Debug\Mairer_Camping.csproj.CopyComplete
 C:\Users\tmair\Desktop\Mairer_Camping\Mairer_Camping\Mairer_Camping\Mairer_Camping\obj\Debug\Mairer_Camping.dll
 C:\Users\tmair\Desktop\Mairer_Camping\Mairer_Camping\Mairer_Camping\Mairer_Camping\obj\Debug\Mairer_Camping.pdb
+C:\Users\tmair\Desktop\Mairer_Camping\Mairer_Camping\Mairer_Camping\Mairer_Camping\bin\BouncyCastle.Crypto.dll
+C:\Users\tmair\Desktop\Mairer_Camping\Mairer_Camping\Mairer_Camping\Mairer_Camping\bin\Google.Protobuf.dll
+C:\Users\tmair\Desktop\Mairer_Camping\Mairer_Camping\Mairer_Camping\Mairer_Camping\bin\MySql.Data.dll
+C:\Users\tmair\Desktop\Mairer_Camping\Mairer_Camping\Mairer_Camping\Mairer_Camping\bin\Renci.SshNet.dll
+C:\Users\tmair\Desktop\Mairer_Camping\Mairer_Camping\Mairer_Camping\Mairer_Camping\bin\Ubiety.Dns.Core.dll
+C:\Users\tmair\Desktop\Mairer_Camping\Mairer_Camping\Mairer_Camping\Mairer_Camping\bin\Google.Protobuf.xml
+C:\Users\tmair\Desktop\Mairer_Camping\Mairer_Camping\Mairer_Camping\Mairer_Camping\bin\MySql.Data.xml
+C:\Users\tmair\Desktop\Mairer_Camping\Mairer_Camping\Mairer_Camping\Mairer_Camping\bin\Renci.SshNet.xml
+C:\Users\tmair\Desktop\Mairer_Camping\Mairer_Camping\Mairer_Camping\Mairer_Camping\bin\Ubiety.Logging.Core.dll
+C:\Users\tmair\Desktop\Mairer_Camping\Mairer_Camping\Mairer_Camping\Mairer_Camping\bin\Ubiety.Dns.Core.xml
+C:\Users\tmair\Desktop\Mairer_Camping\Mairer_Camping\Mairer_Camping\Mairer_Camping\bin\Ubiety.Logging.Core.xml
