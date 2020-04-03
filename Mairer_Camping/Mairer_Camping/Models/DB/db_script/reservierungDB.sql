@@ -13,6 +13,4 @@ create table users(
 
 
 )engine=InnoDB;
-
-Insert INTO users VALUES(null, "Davd", "Holzi", 0, "2001-04-15", "david2", sha2("irgendwas", 256));
-select * from users;
+  
