@@ -1,4 +1,5 @@
-﻿<ul>
+﻿
+<ul>
     <li class="nav_level1">@Html.ActionLink("Home", "index", "home")</li>
     <li class="nav_level2">@Html.ActionLink("Über uns", "about", "home")</li>
     <li class="nav_level2">@Html.ActionLink("Impressum", "impressum", "home")</li>
@@ -15,9 +16,15 @@
     <li class="nav_level2">@Html.ActionLink("Login", "login", "benutzerverwaltung")</li>
     <li class="nav_level2">@Html.ActionLink("Registration", "registration", "benutzerverwaltung")</li>
 
-    <li class="nav_level1">@Html.ActionLink("Admin", "index", "admin")</li>
-    <li class="nav_level2">@Html.ActionLink("Reservierungsanfragen", "reservierungsanfragen", "admin")</li>
-    <li class="nav_level2">@Html.ActionLink("registrierte Benutzer", "registrierteBenutzer", "admin")</li>
+    @using Mairer_Camping.Models
+    @{
+        if ((Session["isAdmin"] != null) && (Convert.ToBoolean(Session["isAdmin"]) == true))
+        {
+            <li class="nav_level1">@Html.ActionLink("Admin", "index", "admin")</li>
+            <li class="nav_level2">@Html.ActionLink("Reservierungsanfragen", "reservierungsanfragen", "admin")</li>
+            <li class="nav_level2">@Html.ActionLink("registrierte Benutzer", "registrierteBenutzer", "admin")</li>
+        }
+    }
 
 
 </ul>

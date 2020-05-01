@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Mairer_Camping.Models.DB.db_script
 {
-    interface i_repository_reservierung
+    interface IRepositoryReservierung : IDbBase
     {
-        void Open();
-        void Close();
-
         bool Insert(Reservierung reservierung);
-
+        bool Delete(int id);
+        bool WurdeBearbeitet(int id);
     }
 }

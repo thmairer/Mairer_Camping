@@ -12,7 +12,7 @@ namespace Mairer_Camping.Controllers
     public class ReservierungController : Controller
     {
 
-        private i_repository_reservierung rep;
+        private IRepositoryReservierung rep;
 
         public ActionResult Index()
         {

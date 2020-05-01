@@ -1,0 +1,63 @@
+﻿@model List<Mairer_Camping.Models.Reservierung>
+@using Mairer_Camping.Models
+
+@{
+    ViewBag.Title = "Reservierungsanfragen";
+}
+
+<h2>Reservierungsanfragen</h2>
+
+@if ((Model != null) && (Model.Count > 0))
+{
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Vorname</td>
+                <td>Nachname</td>
+                <td>Ankunftsdatum</td>
+                <td>Abreisedatum</td>
+
+
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (Reservierung r in Model)
+            {
+            <tr>
+                <td>@r.Id</td>
+                <td>@r.Firstname</td>
+                <td>@r.Lastname</td>
+                <td>@r.ArrivalDate.Value.ToLongDateString()</td>
+                <td>@r.DepartureDate.Value.ToLongDateString()</td>
+
+                <td>
+                    <form method="post" action="/admin/delete/@r.Id">
+
+                        <input type="submit" value="löschen" />
+
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="/admin/wurdeBearbeitet/@r.Id">
+
+                        <input type="submit" value="wurdeBearbeitet" />
+
+                    </form>
+                </td>
+            </tr>
+
+            }
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="0"></td>
+            </tr>
+        </tfoot>
+
+
+    </table>
+
+}

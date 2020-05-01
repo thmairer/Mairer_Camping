@@ -10,31 +10,59 @@ using Mairer_Camping.Models.DB.db_script;
 
 namespace Mairer_Camping.Models.DB
 {
-    public class RepositoryReservierungDB : i_repository_reservierung
+    public class RepositoryReservierungDB : DbBase, IRepositoryReservierung
     {
-        private string _connectionString = "Server=localhost;Database=reservierungDB;Uid=root;Pwd=Platin12;";
-
-        private MySqlConnection _connection = null;
-
-        public void Open()
+        public List<Reservierung> GetAllReservierungen()
         {
-            if (this._connection == null)
+            List<Reservierung> reservierungen = new List<Reservierung>();
+
+            DbCommand cmdSelect = this._connection.CreateCommand();
+            cmdSelect.CommandText = "SELECT * FROM anfragen;";
+
+            using (DbDataReader reader = cmdSelect.ExecuteReader())
             {
-                this._connection = new MySqlConnection(this._connectionString);
+                while (reader.Read())
+                {
+                    reservierungen.Add(
+
+                            new Reservierung
+                            {
+                                Id = Convert.ToInt32(reader["id"]),
+                                Firstname = Convert.ToString(reader["firstname"]),
+                                Lastname = Convert.ToString(reader["lastname"]),
+                                ArrivalDate = Convert.ToDateTime(reader["arrivalDate"]),
+                                DepartureDate = Convert.ToDateTime(reader["departureDate"]),
+                            });
+                }
+
             }
 
-            if (this._connection.State != ConnectionState.Open)
-            {
-                this._connection.Open();
-            }
+            return reservierungen;
+
         }
 
-        public void Close()
+
+        public bool Delete(int id)
         {
-            if ((this._connection != null) && (this._connection.State != ConnectionState.Closed))
-            {
-                this._connection.Close();
-            }
+            DbCommand cmdDel = this._connection.CreateCommand();
+            cmdDel.CommandText = "DELETE FROM users WHERE id=@userid";
+
+            DbParameter paramId = cmdDel.CreateParameter();
+            paramId.ParameterName = "userid";
+            paramId.Value = id;
+            paramId.DbType = DbType.Int32;
+
+            cmdDel.Parameters.Add(paramId);
+
+            return cmdDel.ExecuteNonQuery() == 1;
+        }
+
+        public bool WurdeBearbeitet(int id)
+        {
+            DbCommand cmdWurdeBearbeitet = this._connection.CreateCommand();
+            cmdWurdeBearbeitet.CommandText = "UPDATE users SET istBearbeitet=true WHERE id=@uid";
+
+            return cmdWurdeBearbeitet.ExecuteNonQuery() == 1;
         }
 
         public bool Insert(Reservierung reservierung)

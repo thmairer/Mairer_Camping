@@ -14,14 +14,17 @@ namespace Mairer_Camping.Models
         public DateTime? ArrivalDate { get; set; }
         public DateTime? DepartureDate { get; set; }
 
-        public Reservierung() : this(0, "", "",  null,null) { }
-        public Reservierung(int id, string firstname, string lastname, DateTime? arrivalDate,DateTime? departureDate)
+        public bool IstBearbeitet { get; set; }
+
+        public Reservierung() : this(0, "", "",  null,null,false) { }
+        public Reservierung(int id, string firstname, string lastname, DateTime? arrivalDate,DateTime? departureDate, bool istBearbeitet)
         {
             this.Id = id;
             this.Firstname = firstname;
             this.Lastname = lastname;
             this.ArrivalDate = arrivalDate;
             this.DepartureDate = departureDate;
+            this.IstBearbeitet = istBearbeitet;
         }
 
     }

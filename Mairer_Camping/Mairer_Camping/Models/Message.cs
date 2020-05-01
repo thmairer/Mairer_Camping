@@ -15,7 +15,9 @@ namespace Mairer_Camping.Models
         public Message() : this("", "", "", "") { }
 
         public Message(string header, string messageText) : this(header, "", messageText, "")
-        { }
+        {
+
+        }
 
         public Message(string header, string addHeader, string messageText, string solution)
         {
@@ -24,5 +26,7 @@ namespace Mairer_Camping.Models
             this.MessageText = messageText;
             this.Solution = solution;
         }
+
+
     }
 }

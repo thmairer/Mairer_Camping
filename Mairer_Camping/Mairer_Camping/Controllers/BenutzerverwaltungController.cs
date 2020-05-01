@@ -10,7 +10,7 @@ namespace Mairer_Camping.Controllers
 {
     public class BenutzerverwaltungController : Controller
     {
-        private i_repository_benutzerVerwaltung rep;
+        private IRepositoryBenutzerverwaltung rep;
 
 
         public ActionResult Index()
@@ -44,6 +44,7 @@ namespace Mairer_Camping.Controllers
                 rep.Open();
                 if (rep.Insert(user))
                 {
+                    rep.Close();
                     return View("Message", new Message("Registrierung", "Ihre Daten wurden erfolgreich abgespeichert"));
                 }
                 else
@@ -68,6 +69,8 @@ namespace Mairer_Camping.Controllers
             rep = new RepositoryBenutzerverwaltungDB();
             rep.Open();
             userFromDB = rep.Login(user);
+            rep.Close();
+
             if (userFromDB == null)
             {
                 ModelState.AddModelError("Username", "Benutzername oder Passwort stimmen nicht übereine");
@@ -76,7 +79,16 @@ namespace Mairer_Camping.Controllers
             else
             {
                 Session["loggedinUser"] = userFromDB;
-                return RedirectToAction("index", "home");
+                if (userFromDB.Typ == Typ.Admin)
+                {
+                Session["isAdmin"] = true;
+                }
+                else
+                {
+                    Session["isAdmin"] = false;
+                }
+
+                return RedirectToAction("about","home");
             }
         }
 

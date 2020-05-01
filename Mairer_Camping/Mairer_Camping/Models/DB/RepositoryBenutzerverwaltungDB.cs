@@ -8,32 +8,9 @@ using System.Data.Common;
 
 namespace Mairer_Camping.Models.DB
 {
-    public class RepositoryBenutzerverwaltungDB : i_repository_benutzerVerwaltung
+    public class RepositoryBenutzerverwaltungDB : DbBase, IRepositoryBenutzerverwaltung
     {
-        private string _connectionString = "Server=localhost;Database=db_webproject;Uid=root;Pwd=Platin12;";
-
-        private MySqlConnection _connection = null;
-
-        public void Open()
-        {
-            if (this._connection == null)
-            {
-                this._connection = new MySqlConnection(this._connectionString);
-            }
-
-            if (this._connection.State != ConnectionState.Open)
-            {
-                this._connection.Open();
-            }
-        }
-
-        public void Close()
-        {
-            if ((this._connection != null) && (this._connection.State != ConnectionState.Closed))
-            {
-                this._connection.Close();
-            }
-        }
+        
 
         public bool Insert(User user)
         {
